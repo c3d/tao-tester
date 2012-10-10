@@ -10,7 +10,7 @@
 # (C) 2010 Taodyne SAS
 # ******************************************************************************
 
-MODINSTDIR = taoTester
+MODINSTDIR = tao_tester
 
 include(../modules.pri)
 
