@@ -16,6 +16,10 @@ include(../modules.pri)
 
 release:QMAKE_CXXFLAGS -= -Werror  # Workaround QTBUG-14437 (GCC 4.4)
 
+win32 {
+DEFINES += GLEW_STATIC
+SOURCES += $${TAOTOPSRC}/tao/include/tao/GL/glew.c 
+}
 TBL_SOURCES = tao_tester.tbl
 
 QT += core gui opengl testlib
