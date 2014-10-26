@@ -154,7 +154,6 @@ Tree_p resetTest(Tree_p)
 //
 // ============================================================================
 
-
 Tree_p testDef(Context *context,
                Tree_p, Text_p name, Integer_p fId, Text_p desc,
                Tree_p body, Integer_p width, Integer_p height)
@@ -177,9 +176,9 @@ Tree_p testAddKeyPress(Tree_p, Integer_p key,
 // ----------------------------------------------------------------------------
 {
     QKeyEvent ke(QEvent::KeyPress,
-                 (Qt::Key)key->value,
-                 (Qt::KeyboardModifiers)modifiers->value);
-
+                 Qt::Key(key->value),
+                 Qt::KeyboardModifiers(uint(modifiers->value)));
+    
     player()->add( new TaoKeyEvent(ke, delay->value) );
     return XL::xl_true;
 }
@@ -192,8 +191,8 @@ Tree_p testAddKeyRelease(Tree_p, Integer_p key,
 // ----------------------------------------------------------------------------
 {
     QKeyEvent ke(QEvent::KeyRelease,
-                 (Qt::Key)key->value,
-                 (Qt::KeyboardModifiers)modifiers->value);
+                 Qt::Key(key->value),
+                 Qt::KeyboardModifiers(uint(modifiers->value)));
 
     player()->add( new TaoKeyEvent(ke, delay->value) );
     return XL::xl_true;
@@ -209,9 +208,9 @@ Tree_p testAddMousePress(Tree_p, Integer_p button, Integer_p buttons,
 {
     QMouseEvent me(QEvent::MouseButtonPress,
                    QPoint(x->value, y->value),
-                   (Qt::MouseButton)button->value,
-                   (Qt::MouseButtons)buttons->value,
-                   (Qt::KeyboardModifiers)modifiers->value);
+                   Qt::MouseButton(uint(button->value)),
+                   Qt::MouseButtons(uint(buttons->value)),
+                   Qt::KeyboardModifiers(uint(modifiers->value)));
 
     player()->add( new TaoMouseEvent(me, delay->value) );
     return XL::xl_true;
@@ -227,9 +226,9 @@ Tree_p testAddMouseRelease(Tree_p, Integer_p button,
 {
     QMouseEvent me(QEvent::MouseButtonRelease,
                    QPoint(x->value, y->value),
-                   (Qt::MouseButton)button->value,
-                   (Qt::MouseButtons)buttons->value,
-                   (Qt::KeyboardModifiers)modifiers->value);
+                   Qt::MouseButton(uint(button->value)),
+                   Qt::MouseButtons(uint(buttons->value)),
+                   Qt::KeyboardModifiers(uint(modifiers->value)));
 
     player()->add( new TaoMouseEvent(me, delay->value) );
     return XL::xl_true;
@@ -245,9 +244,9 @@ Tree_p testAddMouseDClick(Tree_p, Integer_p button,
 {
     QMouseEvent me(QEvent::MouseButtonDblClick,
                    QPoint(x->value, y->value),
-                   (Qt::MouseButton)button->value,
-                   (Qt::MouseButtons)buttons->value,
-                   (Qt::KeyboardModifiers)modifiers->value);
+                   Qt::MouseButton(uint(button->value)),
+                   Qt::MouseButtons(uint(buttons->value)),
+                   Qt::KeyboardModifiers(uint(modifiers->value)));
 
     player()->add( new TaoMouseEvent(me, delay->value) );
     return XL::xl_true;
@@ -266,9 +265,9 @@ Tree_p testAddMouseMove(Tree_p,
 {
     QMouseEvent me(QEvent::MouseMove,
                    QPoint(x->value, y->value),
-                   (Qt::MouseButton) button->value,
-                   (Qt::MouseButtons)buttons->value,
-                   (Qt::KeyboardModifiers)modifiers->value);
+                   Qt::MouseButton(uint(button->value)),
+                   Qt::MouseButtons(uint(buttons->value)),
+                   Qt::KeyboardModifiers(uint(modifiers->value)));
 
     player()->add( new TaoMouseEvent(me, delay->value) );
 
