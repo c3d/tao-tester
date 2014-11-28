@@ -20,13 +20,13 @@
 //  (C) 2010 Taodyne SAS
 // ****************************************************************************
 
+#include "test_display.h"
 #include "tao/module_api.h"
 
 #include "widget_tests.h"
 #include "tao_test_events.h"
 #include "../tao_synchro/event_capture.h"
 #include "save_test_dialog.h"
-#include "test_display.h"
 
 #include <QFileInfo>
 #include <QDir>

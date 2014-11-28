@@ -23,10 +23,11 @@
 
 
 #include "tao/module_api.h"
+#include "tao/tao_gl.h"
 #include <iostream>
 #include <QString>
 
-class test_display
+struct test_display
 {
 public:
     test_display(int w, int h);
@@ -35,6 +36,7 @@ public:
     Tao::ModuleApi::fbo *          frame;
     bool                           shot;
     QString                        filename;
+    void                           do_display();
     static void                    display(void *);
     static void *                  use();
     static void                    unuse(void *obj);
