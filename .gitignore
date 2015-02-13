@@ -9,9 +9,11 @@ lib*.so.*
 moc_*.cpp
 *.o
 *.xl.sig
-/debug
-/release
+**/debug
+**/release
 /*.taokey
 doc/Doxyfile
 doc/output
 ui_save_test_dialog.h
+object_script.tao_tester.Debug
+object_script.tao_tester.Release
